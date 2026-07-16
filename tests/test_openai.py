@@ -1,10 +1,10 @@
 import json
 from pathlib import Path
 from types import SimpleNamespace
-from typing import Any
+from typing import Any, cast
 
 from shipment_triage.adapters.feed import load_feed
-from shipment_triage.adapters.openai import OpenAIClassifier
+from shipment_triage.adapters.openai import OpenAIClassifier, OpenAIClient
 from shipment_triage.application.evidence import build_evidence_pack
 from shipment_triage.application.fallback import RuleBasedClassifier
 from shipment_triage.domain.classification import (
@@ -44,9 +44,17 @@ def _pack() -> EvidencePack:
     )
 
 
+class _FakeResponse(SimpleNamespace):
+    output_parsed: object | None
+    output: tuple[object, ...]
+
+
+_ResponseSpec = dict[str, Any] | Exception | _FakeResponse
+
+
 class _FakeResponses:
-    def __init__(self, responses: dict[str, Any] | list[dict[str, Any] | Exception]) -> None:
-        self.responses = [responses] if isinstance(responses, dict) else responses
+    def __init__(self, responses: _ResponseSpec | list[_ResponseSpec]) -> None:
+        self.responses = responses if isinstance(responses, list) else [responses]
         self.calls: list[dict[str, Any]] = []
 
     def parse(self, **kwargs: Any) -> "_FakeResponse":
@@ -54,13 +62,10 @@ class _FakeResponses:
         response = self.responses[min(len(self.calls) - 1, len(self.responses) - 1)]
         if isinstance(response, Exception):
             raise response
+        if isinstance(response, _FakeResponse):
+            return response
         parsed = kwargs["text_format"].model_validate_json(json.dumps(response))
         return _FakeResponse(output_parsed=parsed, output=())
-
-
-class _FakeResponse(SimpleNamespace):
-    output_parsed: object | None
-    output: tuple[object, ...]
 
 
 class _FakeClient:
@@ -85,7 +90,7 @@ def test_openai_uses_stateless_structured_response_and_validates_references() ->
     }
     responses = _FakeResponses(response)
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
@@ -125,7 +130,7 @@ def test_invalid_evidence_reference_gets_one_repair_attempt() -> None:
     invalid["classifications"][0]["evidence_refs"] = ["invented:reference"]
     responses = _FakeResponses([invalid, _valid_response(pack)])
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
@@ -147,7 +152,7 @@ def test_second_invalid_output_uses_visible_deterministic_fallback() -> None:
     invalid["classifications"][0]["evidence_refs"] = ["invented:reference"]
     responses = _FakeResponses([invalid, invalid])
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
@@ -168,7 +173,7 @@ def test_quota_error_opens_model_circuit_for_later_batches() -> None:
     pack = _pack()
     responses = _FakeResponses([_QuotaError("quota")])
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
@@ -188,7 +193,7 @@ def test_invalid_evidence_reference_never_reaches_effective_output() -> None:
     invalid["classifications"][0]["evidence_refs"] = ["invented:reference"]
     responses = _FakeResponses([invalid, invalid])
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
@@ -202,12 +207,11 @@ def test_invalid_evidence_reference_never_reaches_effective_output() -> None:
 
 def test_refusal_uses_fallback_without_retrying() -> None:
     pack = _pack()
-    responses = _FakeResponses([_QuotaError("unused")])
     refusal = SimpleNamespace(type="refusal", refusal="Cannot classify this input.")
     message = SimpleNamespace(type="message", content=(refusal,))
-    responses.parse = lambda **kwargs: _FakeResponse(output_parsed=None, output=(message,))
+    responses = _FakeResponses(_FakeResponse(output_parsed=None, output=(message,)))
     classifier = OpenAIClassifier(
-        client=_FakeClient(responses),
+        client=cast("OpenAIClient", _FakeClient(responses)),
         model="gpt-5.6-luna",
         fallback=RuleBasedClassifier(),
     )
