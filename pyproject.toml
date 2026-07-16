@@ -9,8 +9,8 @@ description = "Auditable shipment exception triage with structured AI decisions 
 requires-python = ">=3.12"
 license = "MIT"
 dependencies = [
-  "google-genai>=2.10,<3",
   "httpx>=0.28,<1",
+  "openai>=2,<3",
   "pydantic>=2.12,<3",
   "PyYAML>=6.0.2,<7",
 ]
@@ -73,7 +73,7 @@ warn_unreachable = true
 plugins = ["pydantic.mypy"]
 
 [tool.pytest.ini_options]
-addopts = "-q --strict-config --strict-markers --cov=shipment_triage --cov-report=term-missing --cov-fail-under=85"
+addopts = "-q --strict-config --strict-markers -m 'not live' --cov=shipment_triage --cov-report=term-missing --cov-fail-under=85"
 testpaths = ["tests"]
 pythonpath = ["src"]
 markers = [

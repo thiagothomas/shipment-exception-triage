@@ -4,6 +4,8 @@ from collections.abc import Iterable
 from datetime import UTC, datetime, time, timedelta
 from enum import StrEnum
 
+from pydantic import AwareDatetime
+
 from shipment_triage.domain.models import DomainModel, NormalizedEvent
 from shipment_triage.domain.statuses import EXCEPTION_STATUSES, CanonicalStatus
 from shipment_triage.domain.timelines import ShipmentTimeline, TerminalState
@@ -26,6 +28,7 @@ class TriggerFact(DomainModel):
 
 class TriggerEvaluation(DomainModel):
     shipment_id: str
+    as_of: AwareDatetime
     facts: tuple[TriggerFact, ...]
 
     @property
@@ -118,7 +121,7 @@ def evaluate_timeline(
             "An unmapped latest carrier status requires human interpretation.",
         ),
     )
-    return TriggerEvaluation(shipment_id=timeline.shipment_id, facts=facts)
+    return TriggerEvaluation(shipment_id=timeline.shipment_id, as_of=as_of, facts=facts)
 
 
 def evaluate_timelines(
