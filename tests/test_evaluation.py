@@ -63,7 +63,7 @@ class _MissingResultClassifier:
 def test_eval_labels_are_versioned_and_cover_expected_strata() -> None:
     dataset = load_eval_dataset(LABELS)
 
-    assert dataset.version == "1"
+    assert dataset.version == "2"
     assert len(dataset.cases) == 20
     assert sum(case.split is EvalSplit.DEV for case in dataset.cases) == 12
     assert sum(case.split is EvalSplit.TEST for case in dataset.cases) == 8
@@ -114,7 +114,7 @@ def test_eval_refuses_silent_evidence_drift(tmp_path: Path) -> None:
             classifier=RuleBasedClassifier(),
             provider="fallback-rules",
             model=None,
-            split=EvalSplit.DEV,
+            split=EvalSplit.TEST,
         )
 
 

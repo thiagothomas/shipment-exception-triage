@@ -1,8 +1,8 @@
-version: "1"
+version: "2"
 as_of: "2026-06-30T11:00:00Z"
 cases:
-  - case_id: dev-missed-appointment-este
-    split: dev
+  - case_id: test-missed-appointment-este
+    split: test
     shipment_id: SHP-00001
     carrier: ESTE
     evidence_hash: 5b87c44ac70ef41d98df09dbbe8396626b7d3eb2a7be20329c76e54bfa5ea6e2
@@ -14,8 +14,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier explicitly reports a missed delivery appointment.
 
-  - case_id: dev-weather-este
-    split: dev
+  - case_id: test-weather-este
+    split: test
     shipment_id: SHP-00003
     carrier: ESTE
     evidence_hash: 2062214041e96480e3796ae59e0c66a73ec7438925b9811303cc4fe7a181bfd6
@@ -40,8 +40,8 @@ cases:
     human_review_required: true
     label_rationale: The shipment has exceeded both the scan-age and promise-date thresholds.
 
-  - case_id: dev-terminal-conflict-fxfe
-    split: dev
+  - case_id: test-terminal-conflict-fxfe
+    split: test
     shipment_id: SHP-00008
     carrier: FXFE
     evidence_hash: e618cadce649f99aa57bc5ea265729fb168e6f98249272a2bfdb3dba10bad7e8
@@ -53,8 +53,8 @@ cases:
     human_review_required: true
     label_rationale: Delivered and non-delivered terminal evidence conflict.
 
-  - case_id: dev-past-promise-upsn
-    split: dev
+  - case_id: test-past-promise-upsn
+    split: test
     shipment_id: SHP-00010
     carrier: UPSN
     evidence_hash: 215b7b7c61535d1bd428e2120b04f4150c58aede6c45151bb6e1ba384f4d9823
@@ -66,8 +66,8 @@ cases:
     human_review_required: true
     label_rationale: The unresolved shipment is beyond its promised delivery date.
 
-  - case_id: dev-other-exception-fxfe
-    split: dev
+  - case_id: test-other-exception-fxfe
+    split: test
     shipment_id: SHP-00020
     carrier: FXFE
     evidence_hash: 55e2a2ad6a75d396eb626b1b3159d3ba7a909b3f7ee80ee7683cf83d8a062312
@@ -79,8 +79,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier reports an exception without evidence for a narrower cause.
 
-  - case_id: dev-mechanical-este
-    split: dev
+  - case_id: test-mechanical-este
+    split: test
     shipment_id: SHP-00023
     carrier: ESTE
     evidence_hash: 1bc7f444c329fb235b575ab587c807ba00dc0b417e38e42794e7656449e8b0a0
@@ -105,8 +105,8 @@ cases:
     human_review_required: true
     label_rationale: The shipment has no recent scan but is not beyond its promise date.
 
-  - case_id: dev-damaged-este
-    split: dev
+  - case_id: test-damaged-este
+    split: test
     shipment_id: SHP-00044
     carrier: ESTE
     evidence_hash: fe57a69b0acf91a18a84e4a1313ae92bc76ae8fc2d1662f4193b5694f8eedf44
@@ -118,8 +118,8 @@ cases:
     human_review_required: true
     label_rationale: Explicit damage evidence requires a claim investigation or manual review.
 
-  - case_id: dev-consignee-unavailable-este
-    split: dev
+  - case_id: test-consignee-unavailable-este
+    split: test
     shipment_id: SHP-00061
     carrier: ESTE
     evidence_hash: 779107e12ffada14e2cf4a47a075127f9af343b8cc654eeed8c9c6f31f8a2843
@@ -157,8 +157,8 @@ cases:
     human_review_required: true
     label_rationale: The shipment has no recent scan but is not beyond its promise date.
 
-  - case_id: test-terminal-conflict-fxfe
-    split: test
+  - case_id: dev-terminal-conflict-fxfe-35
+    split: dev
     shipment_id: SHP-00035
     carrier: FXFE
     evidence_hash: cdf725e68d86e87e607628b6fdf3c8c491af9d7356565cfae07ce234429f111d
@@ -170,8 +170,8 @@ cases:
     human_review_required: true
     label_rationale: Delivered and non-delivered terminal evidence conflict.
 
-  - case_id: test-past-promise-upsn
-    split: test
+  - case_id: dev-past-promise-upsn
+    split: dev
     shipment_id: SHP-00037
     carrier: UPSN
     evidence_hash: 3f32ecd7466af216c8e8c90669863cb1711ef28032c673d3197d00af0813ddfc
@@ -183,8 +183,8 @@ cases:
     human_review_required: true
     label_rationale: The unresolved shipment is beyond its promised delivery date.
 
-  - case_id: test-missed-appointment-este
-    split: test
+  - case_id: dev-missed-appointment-este-68
+    split: dev
     shipment_id: SHP-00068
     carrier: ESTE
     evidence_hash: 756faf98ab8744fb64799baaf6987267b096052eb6c555c4cb68482a6d3f7967
@@ -196,8 +196,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier explicitly reports a missed delivery appointment.
 
-  - case_id: test-other-exception-upsn
-    split: test
+  - case_id: dev-other-exception-upsn
+    split: dev
     shipment_id: SHP-00089
     carrier: UPSN
     evidence_hash: 62e9e6f470eaae6c3a6877432db8e95bd9655615fd07ff60ab8ffc6445c6b89a
@@ -209,8 +209,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier reports an exception without evidence for a narrower cause.
 
-  - case_id: test-weather-fxfe
-    split: test
+  - case_id: dev-weather-fxfe-94
+    split: dev
     shipment_id: SHP-00094
     carrier: FXFE
     evidence_hash: db6e83b377e9b2746cd20019030ec1e8de63f6fc47e4a1bba8248cd34c821579
@@ -222,8 +222,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier explicitly attributes the late shipment to weather.
 
-  - case_id: test-mechanical-este
-    split: test
+  - case_id: dev-mechanical-este-99
+    split: dev
     shipment_id: SHP-00099
     carrier: ESTE
     evidence_hash: 70e2972116ab2fa0a27b3410d5a7b40d8e16dbd491b0551b6d79b1a80af7473d
@@ -235,8 +235,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier explicitly attributes the late shipment to a mechanical issue.
 
-  - case_id: test-consignee-unavailable-este
-    split: test
+  - case_id: dev-consignee-unavailable-este-101
+    split: dev
     shipment_id: SHP-00101
     carrier: ESTE
     evidence_hash: c5208a780e40df23469fc0fc59ec2f910fd2628ae32f4bbc0aee05f85a57803b
@@ -248,8 +248,8 @@ cases:
     human_review_required: true
     label_rationale: The carrier reports that the consignee is closed or unavailable.
 
-  - case_id: test-damaged-este
-    split: test
+  - case_id: dev-damaged-este-113
+    split: dev
     shipment_id: SHP-00113
     carrier: ESTE
     evidence_hash: 0daec7eaa69f10718fee7e48b8f331ec4ba93a98f769c2256d406c4c9d7da36e

@@ -63,7 +63,7 @@ if TYPE_CHECKING:
     from shipment_triage.domain.triggers import TriggerEvaluation
 
 _TRIGGER_POLICY_VERSION = "1"
-_CLASSIFICATION_POLICY_VERSION = "1"
+_CLASSIFICATION_POLICY_VERSION = "2"
 _ESCALATION_POLICY_VERSION = "1"
 
 

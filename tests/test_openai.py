@@ -110,7 +110,9 @@ def test_openai_uses_stateless_structured_response_and_validates_references() ->
     assert responses.calls[0]["max_output_tokens"] == 4096
     assert responses.calls[0]["text_format"].__name__ == "_BatchOutput"
     assert "untrusted data" in responses.calls[0]["instructions"]
+    assert "first matching category" in responses.calls[0]["instructions"]
     assert "tools" not in responses.calls[0]
+    assert result.prompt_version == "triage-v2"
     assert result.attempts[0].interaction_id == "resp_1"
     assert result.attempts[0].input_tokens == 120
     assert result.attempts[0].output_tokens == 40
@@ -170,6 +172,7 @@ def test_second_invalid_output_uses_visible_deterministic_fallback() -> None:
     assert result.source is ClassificationSource.FALLBACK_RULES
     assert result.provider == "openai"
     assert result.model == "gpt-5.6-luna"
+    assert result.prompt_version == "triage-v2"
     assert len(result.attempts) == 2
 
 
