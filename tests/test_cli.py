@@ -92,6 +92,8 @@ def test_cli_run_passes_flags_to_shared_application_and_uses_degraded_exit(
     assert captured["shipment_id"] == "SHP-00003"
     assert captured["limit"] == 1
     assert '"status": "degraded"' in output.out
+    expected_report = tmp_path / "runs" / "20260716T120000Z-abcdef12-123abc" / "triage_report.md"
+    assert f'"human_report": "{expected_report}"' in output.out
     assert "tracking-secret" not in output.out + output.err
 
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 import secrets
 from dataclasses import dataclass
@@ -306,7 +307,12 @@ def _prepare_escalation(
     )
 
 
-def _report(summary: RunSummary) -> bytes:
+def _markdown_cell(value: str) -> str:
+    collapsed = " ".join(value.split())
+    return html.escape(collapsed, quote=False).replace("\\", "\\\\").replace("|", "\\|")
+
+
+def _report(summary: RunSummary, decisions: tuple[ShipmentDecision, ...]) -> bytes:
     lines = [
         "# Shipment exception triage report",
         "",
@@ -331,6 +337,42 @@ def _report(summary: RunSummary) -> bytes:
     if summary.degraded_reasons:
         lines.extend(("", "## Degraded reasons", ""))
         lines.extend(f"- {reason}" for reason in summary.degraded_reasons)
+    flagged = tuple(decision for decision in decisions if decision.selected)
+    if flagged:
+        lines.extend(
+            (
+                "",
+                f"## Flagged shipment decisions ({len(flagged)})",
+                "",
+                "| Shipment | Carrier | Category | Severity | Final disposition | "
+                "Data | EDI | Rationale |",
+                "|---|---|---|---|---|---|---|---|",
+            )
+        )
+        for decision in flagged:
+            if decision.classification is None or decision.enrichment is None:
+                raise AssertionError("selected decision is missing report data")
+            classification = decision.classification.effective
+            enrichment = decision.enrichment
+            data = enrichment.data_completeness.value
+            if enrichment.failure_reason is not None:
+                data = f"{data} ({enrichment.failure_reason.value})"
+            edi = "-"
+            if decision.escalation is not None:
+                edi = decision.escalation.status.value
+                if decision.escalation.failure_code is not None:
+                    edi = f"{edi} ({decision.escalation.failure_code})"
+            cells = (
+                f"`{decision.shipment_id}`",
+                decision.timeline.carrier,
+                classification.category.value,
+                classification.severity.value,
+                decision.policy.final_disposition.value,
+                data,
+                edi,
+                classification.rationale,
+            )
+            lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
     return ("\n".join(lines) + "\n").encode()
 
 
@@ -561,7 +603,7 @@ def run_triage(
         artifact_paths.rejected_records,
         tuple(feed.rejected_records),
     )
-    writer.write_bytes(artifact_paths.report, _report(summary))
+    writer.write_bytes(artifact_paths.report, _report(summary, ordered_decisions))
     writer.write_json(artifact_paths.summary, summary)
     return TriageRunResult(summary=summary, decisions=ordered_decisions)
 

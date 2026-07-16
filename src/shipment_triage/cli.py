@@ -186,7 +186,11 @@ def run_cli(argv: list[str] | None = None) -> int:
             shipment_id=args.shipment,
             limit=args.limit,
         )
-        print(json.dumps(result.summary.model_dump(mode="json"), indent=2, sort_keys=True))
+        summary = result.summary.model_dump(mode="json")
+        summary["human_report"] = str(
+            settings.output_root / result.summary.run_id / result.summary.artifacts.report
+        )
+        print(json.dumps(summary, indent=2, sort_keys=True))
         return 3 if result.summary.status is RunStatus.DEGRADED else 0
     except (ConfigurationError, PipelineInputError, ValueError) as exc:
         print(f"configuration error: {exc}", file=sys.stderr)

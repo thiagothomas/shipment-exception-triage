@@ -32,6 +32,27 @@ uv run triage run \
   --as-of 2026-06-30T11:00:00Z
 ```
 
+The command prints a `human_report` path when it finishes:
+
+```json
+{
+  "status": "completed",
+  "human_report": "runs/<run-id>/triage_report.md"
+}
+```
+
+Copy that path and open the report in your terminal or, on macOS, in your default Markdown app:
+
+```bash
+REPORT='runs/<run-id>/triage_report.md'
+less "$REPORT"
+
+# macOS
+open "$REPORT"
+```
+
+This is the human-readable result. It includes the run funnel and a table of every flagged shipment with its category, severity, final disposition, enrichment state, EDI result, and rationale. The JSONL files remain available for deeper debugging.
+
 Use the deterministic classifier without calling OpenAI:
 
 ```bash
@@ -61,7 +82,7 @@ Each execution creates an owner-only directory under `runs/<run-id>/` containing
 | Artifact | Purpose |
 |---|---|
 | `summary.json` | Machine-readable funnel, status, token counts, and degradation reasons |
-| `triage_report.md` | Concise operator summary |
+| `triage_report.md` | Human-readable funnel and flagged-shipment decision table |
 | `decisions.jsonl` | One auditable decision for every evaluated shipment, including no-action decisions |
 | `rejected_records.jsonl` | Malformed input records and safe rejection details |
 | `evidence/*.json` | The exact bounded evidence supplied for each flagged shipment |
@@ -210,7 +231,7 @@ Remaining uncertainties:
 - Structured output guarantees shape, not correctness; model and prompt changes require rerunning the eval.
 - Production shipment data requires an approved privacy, retention, and provider configuration.
 
-Time spent: **2h 40 min**.
+Time spent: **2h**.
 
 ## AI tooling
 

@@ -105,6 +105,19 @@ def test_pipeline_writes_one_auditable_decision_per_shipment(tmp_path: Path) -> 
     for path in edi_files:
         Exercise214Validator().validate(path.read_bytes())
 
+    report = (run_root / "triage_report.md").read_text(encoding="utf-8")
+    assert "## Flagged shipment decisions (52)" in report
+    assert (
+        "| Shipment | Carrier | Category | Severity | Final disposition | "
+        "Data | EDI | Rationale |" in report
+    )
+    assert (
+        "| `SHP-00003` | ESTE | CARRIER_DELAY_WEATHER | HIGH | "
+        "PREPARE_CARRIER_ESCALATION | ENRICHED | CREATED |" in report
+    )
+    assert "Carrier evidence attributes the delay to weather." in report
+    assert "`SHP-00002`" not in report
+
     ready = next(decision for decision in result.decisions if decision.shipment_id == "SHP-00003")
     assert ready.enrichment is not None
     assert ready.enrichment.status is EnrichmentStatus.VALID
