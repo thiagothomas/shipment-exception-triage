@@ -84,10 +84,13 @@ def decide_disposition(
     past_promise = _matched(trigger, TriggerRule.PAST_PROMISE)
     stalled = _matched(trigger, TriggerRule.STALLED)
     unknown = _matched(trigger, TriggerRule.UNKNOWN_STATUS)
+    invalid_evidence = any(
+        override.code == "INVALID_EVIDENCE_REFERENCE" for override in classification.overrides
+    )
     latest_event_time = max(event.occurred_at for event in timeline.events)
     idle_hours = (trigger.as_of - latest_event_time).total_seconds() / 3600
 
-    if timeline.terminal_state is TerminalState.CONFLICTED or unknown:
+    if timeline.terminal_state is TerminalState.CONFLICTED or unknown or invalid_evidence:
         final = FinalDisposition.MANUAL_REVIEW
     elif effective.category is ProblemCategory.DAMAGED_IN_TRANSIT:
         final = (

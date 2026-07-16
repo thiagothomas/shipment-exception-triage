@@ -4,13 +4,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
+from contextlib import ExitStack
 from datetime import datetime
 from pathlib import Path
-from typing import NoReturn
+from typing import TYPE_CHECKING, NoReturn, cast
 
 from dotenv import load_dotenv
+from openai import OpenAI
 
+from shipment_triage.adapters.artifacts import ArtifactError, atomic_write_private
+from shipment_triage.adapters.openai import OpenAIClassifier, OpenAIClient
+from shipment_triage.application.evaluation import run_evaluation
+from shipment_triage.application.fallback import RuleBasedClassifier
 from shipment_triage.application.pipeline import PipelineInputError
 from shipment_triage.bootstrap import (
     ConfigurationError,
@@ -18,7 +25,11 @@ from shipment_triage.bootstrap import (
     execute_run,
     load_settings,
 )
+from shipment_triage.domain.evaluation import EvalSplit, EvaluationReport
 from shipment_triage.domain.runs import RunStatus
+
+if TYPE_CHECKING:
+    from shipment_triage.application.ports import Classifier
 
 
 def _aware_datetime(value: str) -> datetime:
@@ -54,6 +65,16 @@ def _parser() -> argparse.ArgumentParser:
     serve.add_argument("--classification-batch-size", type=int)
     serve.add_argument("--tracking-workers", type=int)
     serve.add_argument("--port", type=int, default=8000)
+
+    evaluate = subcommands.add_parser("eval", help="evaluate classifications on pinned labels")
+    evaluate.add_argument("--labels", type=Path, default=Path("eval/labels.yaml"))
+    evaluate.add_argument("--events", type=Path, default=Path("events.jsonl"))
+    evaluate.add_argument("--split", choices=("dev", "test", "all"), default="test")
+    evaluate.add_argument("--provider", choices=("fallback", "openai"), default="fallback")
+    evaluate.add_argument("--model")
+    evaluate.add_argument("--repeats", type=int)
+    evaluate.add_argument("--batch-size", type=int, default=8)
+    evaluate.add_argument("--out", type=Path)
     return parser
 
 
@@ -67,10 +88,76 @@ def _settings(args: argparse.Namespace) -> RuntimeSettings:
     )
 
 
+def _write_evaluation(path: Path, report: EvaluationReport) -> None:
+    payload = (report.model_dump_json(indent=2) + "\n").encode()
+    try:
+        atomic_write_private(path, payload)
+    except (ArtifactError, OSError) as exc:
+        raise ConfigurationError("evaluation report could not be written safely") from exc
+
+
+def _run_evaluation(args: argparse.Namespace) -> int:
+    provider = "fallback-rules" if args.provider == "fallback" else "openai"
+    split = None if args.split == "all" else EvalSplit(args.split)
+    repeats = args.repeats if args.repeats is not None else (3 if provider == "openai" else 1)
+    model: str | None = None
+
+    with ExitStack() as stack:
+        if provider == "openai":
+            api_key = os.getenv("OPENAI_API_KEY", "").strip()
+            if not api_key:
+                raise ConfigurationError("OPENAI_API_KEY is required for OpenAI evaluation")
+            model = args.model or os.getenv("OPENAI_MODEL") or "gpt-5.6-luna"
+            client = stack.enter_context(OpenAI(api_key=api_key, timeout=60.0, max_retries=2))
+            classifier = cast(
+                "Classifier",
+                OpenAIClassifier(
+                    client=cast("OpenAIClient", client),
+                    model=model,
+                    fallback=RuleBasedClassifier(),
+                    max_batch_size=args.batch_size,
+                ),
+            )
+        else:
+            if args.model is not None:
+                raise ConfigurationError("--model requires --provider openai")
+            classifier = cast("Classifier", RuleBasedClassifier())
+
+        report = run_evaluation(
+            labels_path=args.labels,
+            events_path=args.events,
+            classifier=classifier,
+            provider=provider,
+            model=model,
+            split=split,
+            repeats=repeats,
+            batch_size=args.batch_size,
+        )
+
+    output_path = args.out or Path("eval/results") / f"{args.provider}-{args.split}.json"
+    _write_evaluation(output_path, report)
+    summary = {
+        "action_consistency": report.action_consistency,
+        "cases": report.runs[0].raw.cases,
+        "effective_category_accuracy": [run.effective.category_accuracy for run in report.runs],
+        "hard_gates_passed": report.hard_gates_passed,
+        "model": report.model,
+        "provider": report.provider,
+        "raw_category_accuracy": [run.raw.category_accuracy for run in report.runs],
+        "report": str(output_path),
+        "repeats": report.repeats,
+        "split": report.split,
+    }
+    print(json.dumps(summary, indent=2, sort_keys=True))
+    return 0 if report.hard_gates_passed else 3
+
+
 def run_cli(argv: list[str] | None = None) -> int:
     load_dotenv(override=False)
     args = _parser().parse_args(argv)
     try:
+        if args.command == "eval":
+            return _run_evaluation(args)
         settings = _settings(args)
         if args.command == "serve":
             if not 1 <= args.port <= 65535:

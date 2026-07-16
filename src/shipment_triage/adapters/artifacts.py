@@ -31,6 +31,30 @@ def _sha256(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def atomic_write_private(destination: Path, payload: bytes) -> None:
+    """Atomically replace one local file with owner-only permissions."""
+
+    if destination.exists() and destination.is_symlink():
+        raise ArtifactError("artifact destination cannot be a symbolic link")
+    destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+    destination.parent.chmod(0o700)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{destination.name}.",
+        dir=destination.parent,
+    )
+    temporary = Path(temporary_name)
+    try:
+        os.fchmod(descriptor, 0o600)
+        with os.fdopen(descriptor, "wb") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(destination)
+        destination.chmod(0o600)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 class RunArtifactWriter:
     """Write one run directory and safely inspect artifacts from prior runs."""
 
@@ -62,31 +86,9 @@ class RunArtifactWriter:
         path = _relative_path(relative)
         return self._resolve_output(f"{self.run_id}/{path.as_posix()}")
 
-    @staticmethod
-    def _atomic_write(destination: Path, payload: bytes) -> None:
-        if destination.exists() and destination.is_symlink():
-            raise ArtifactError("artifact destination cannot be a symbolic link")
-        destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
-        destination.parent.chmod(0o700)
-        descriptor, temporary_name = tempfile.mkstemp(
-            prefix=f".{destination.name}.",
-            dir=destination.parent,
-        )
-        temporary = Path(temporary_name)
-        try:
-            os.fchmod(descriptor, 0o600)
-            with os.fdopen(descriptor, "wb") as handle:
-                handle.write(payload)
-                handle.flush()
-                os.fsync(handle.fileno())
-            temporary.replace(destination)
-            destination.chmod(0o600)
-        finally:
-            temporary.unlink(missing_ok=True)
-
     def write_bytes(self, relative: str, payload: bytes) -> tuple[str, str]:
         destination = self._resolve_run(relative)
-        self._atomic_write(destination, payload)
+        atomic_write_private(destination, payload)
         return relative, _sha256(payload)
 
     def write_json(self, relative: str, value: BaseModel | dict[str, Any]) -> tuple[str, str]:
@@ -134,7 +136,7 @@ class RunArtifactWriter:
                 else StoredArtifactStatus.CONFLICT
             )
             return StoredArtifactResult(status=status, artifact_hash=existing_hash)
-        self._atomic_write(destination, payload)
+        atomic_write_private(destination, payload)
         return StoredArtifactResult(
             status=StoredArtifactStatus.RESTORED,
             artifact_hash=payload_hash,
@@ -144,4 +146,5 @@ class RunArtifactWriter:
 __all__ = [
     "ArtifactError",
     "RunArtifactWriter",
+    "atomic_write_private",
 ]

@@ -124,3 +124,35 @@ def test_damage_cannot_be_downgraded_or_turned_into_carrier_edi() -> None:
     assert guarded.effective.recommended_action is RecommendedAction.FILE_CLAIM_INVESTIGATION
     assert decision.final_disposition is FinalDisposition.FILE_CLAIM_INVESTIGATION
     assert decision.verification_state is VerificationState.NOT_APPLICABLE
+
+
+def test_invalid_provider_evidence_cannot_escape_manual_review_into_edi() -> None:
+    timeline, trigger, enrichment, pack = _case("SHP-00003")
+    unsafe = Classification(
+        shipment_id=pack.shipment_id,
+        category=ProblemCategory.CARRIER_DELAY_WEATHER,
+        severity=Severity.HIGH,
+        recommended_action=RecommendedAction.ESCALATE_TO_CARRIER,
+        confidence=0.99,
+        rationale="Escalate using unsupported evidence.",
+        evidence_refs=("invented:evidence",),
+    )
+    provider_result = ClassificationResult(
+        provider_output=unsafe,
+        effective=unsafe,
+        source=ClassificationSource.OPENAI,
+        provider="openai",
+        model="gpt-5.6-luna",
+        prompt_version="triage-v1",
+        schema_version="1",
+        evidence_hash=pack.evidence_hash,
+        attempts=(),
+    )
+
+    guarded = apply_guardrails(pack, provider_result)
+    decision = decide_disposition(timeline, trigger, enrichment, guarded)
+
+    assert guarded.effective.recommended_action is RecommendedAction.MANUAL_REVIEW
+    assert {override.code for override in guarded.overrides} == {"INVALID_EVIDENCE_REFERENCE"}
+    assert decision.final_disposition is FinalDisposition.MANUAL_REVIEW
+    assert decision.verification_state is VerificationState.NOT_APPLICABLE

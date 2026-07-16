@@ -13,6 +13,8 @@ from shipment_triage.domain.runs import (
     TriageRunResult,
 )
 
+ROOT = Path(__file__).parents[1]
+
 
 def _result(status: RunStatus) -> TriageRunResult:
     return TriageRunResult(
@@ -107,3 +109,61 @@ def test_cli_missing_required_environment_is_safe_configuration_error(
     assert exit_code == 2
     assert output.out == ""
     assert "TRACKING_API_BASE_URL and TRACKING_API_KEY are required" in output.err
+
+
+def test_cli_eval_runs_without_tracking_credentials_and_writes_private_report(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    monkeypatch.setattr(cli, "load_dotenv", lambda **_kwargs: False)
+    monkeypatch.delenv("TRACKING_API_BASE_URL", raising=False)
+    monkeypatch.delenv("TRACKING_API_KEY", raising=False)
+    report_path = tmp_path / "fallback-test.json"
+
+    exit_code = cli.run_cli(
+        [
+            "eval",
+            "--labels",
+            str(ROOT / "eval/labels.yaml"),
+            "--events",
+            str(ROOT / "events.jsonl"),
+            "--out",
+            str(report_path),
+        ]
+    )
+    output = capsys.readouterr()
+
+    assert exit_code == 0
+    assert report_path.stat().st_mode & 0o777 == 0o600
+    assert '"hard_gates_passed": true' in output.out
+    assert '"provider": "fallback-rules"' in report_path.read_text(encoding="utf-8")
+    assert output.err == ""
+
+
+def test_cli_openai_eval_requires_only_its_provider_key(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    monkeypatch.setattr(cli, "load_dotenv", lambda **_kwargs: False)
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+
+    exit_code = cli.run_cli(
+        [
+            "eval",
+            "--provider",
+            "openai",
+            "--labels",
+            str(ROOT / "eval/labels.yaml"),
+            "--events",
+            str(ROOT / "events.jsonl"),
+            "--out",
+            str(tmp_path / "report.json"),
+        ]
+    )
+    output = capsys.readouterr()
+
+    assert exit_code == 2
+    assert output.out == ""
+    assert "OPENAI_API_KEY is required for OpenAI evaluation" in output.err
