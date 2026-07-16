@@ -1,0 +1,260 @@
+{"shipmentId": "SHP-00042", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-29T09:00:00Z", "promisedDeliveryDate": "2026-06-25"}
+{"shipmentId": "SHP-00125", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T23:00:00Z", "city": "Reno", "state": "NV"}
+{"tracking_number": "SHP-00032", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782691200000, "location": {"city": "Reno", "region": "NV"}}
+{"pro_number": "SHP-00019", "scac": "ESTE", "status": "DELAYED - WEATHER", "datetime": "06/28/2026 09:00", "terminal": "Phoenix, AZ", "weight": 1238, "pieces": 7}
+{"shipmentId": "SHP-00083", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-26T08:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-26"}
+{"pro_number": "SHP-00097", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/29/2026 06:00", "terminal": "Atlanta, GA", "weight": 404, "pieces": 5}
+{"tracking_number": "SHP-00123", "carrier": "FXFE", "event": {"code": 950, "description": "Weather delay"}, "event_time": 1782705600000, "location": {"city": "Memphis", "region": "TN"}}
+{"shipmentId": "SHP-00120", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T05:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-30"}
+{"pro_number": "SHP-00003", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/28/2026 20:00", "terminal": "Reno, NV", "weight": 1787, "pieces": 1}
+{"pro_number": "SHP-00099", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/28/2026 21:00", "terminal": "Denver, CO", "appt": "2026-06-25", "weight": 599, "pieces": 7}
+{"pro_number": "SHP-00012", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/26/2026 20:00", "terminal": "Columbus, OH", "appt": "2026-06-27", "weight": 86, "pieces": 1}
+{"shipmentId": "SHP-00070", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T01:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-07-02"}
+{"pro_number": "SHP-00005", "scac": "ESTE", "status": "MISSED DELIVERY APPOINTMENT", "datetime": "06/28/2026 06:00", "terminal": "Newark, NJ", "appt": "2026-06-28", "weight": 232, "pieces": 8}
+{"tracking_number": "SHP-00029", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782104400000, "location": {"city": "Dallas"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00110", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 22:00", "terminal": "Memphis, TN", "appt": "2026-06-28", "weight": 1389, "pieces": 2}
+{"pro_number": "SHP-00078", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 17:00", "terminal": "Tampa, FL", "weight": 759, "pieces": 1}
+{"shipmentId": "SHP-00124", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-29T23:00:00Z", "city": "Portland", "state": "OR"}
+{"shipmentId": "SHP-00066", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-26T04:00:00Z", "city": "Memphis", "state": "TN"}
+{"pro_number": "SHP-00036", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/29/2026 03:00", "terminal": "Phoenix, AZ", "weight": 964, "pieces": 7}
+{"shipmentId": "SHP-00055", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-28T00:00:00Z", "city": "Atlanta", "state": "GA"}
+{"pro_number": "SHP-00023", "scac": "ESTE", "status": "DELAYED - MECHANICAL", "datetime": "06/28/2026 01:00", "terminal": "Charlotte, NC", "appt": "2026-06-26", "weight": 505, "pieces": 10}
+{"shipmentId": "SHP-00043", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T06:00:00Z", "city": "Denver", "state": "CO", "promisedDeliveryDate": "2026-06-29"}
+{"shipmentId": "SHP-00037", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-28T04:00:00Z", "promisedDeliveryDate": "2026-06-25"}
+{"shipmentId": "SHP-00084", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-29T14:00:00Z", "city": "Denver", "state": "CO", "promisedDeliveryDate": "2026-06-30"}
+{"pro_number": "SHP-00061", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/28/2026 13:00", "terminal": "Portland, OR", "appt": "2026-06-26", "weight": 1690, "pieces": 4}
+{"tracking_number": "SHP-00094", "carrier": "FXFE", "event": {"code": 950, "description": "Weather delay"}, "event_time": 1782716400000, "location": {"city": "Charlotte", "region": "NC"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00073", "carrier": "FXFE", "event": {"code": 900, "description": "Delivery exception"}, "event_time": 1782633600000, "location": {"city": "Newark", "region": "NJ"}}
+{"tracking_number": "SHP-00074", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782799200000, "location": {"city": "Portland", "region": "OR"}, "sla_date": "2026-06-30"}
+{"shipmentId": "SHP-00055", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T05:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00057", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T21:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-07-01"}
+{"pro_number": "SHP-00105", "scac": "ESTE", "status": "PICKED UP", "datetime": "06/27/2026 16:00", "terminal": "Charlotte, NC", "appt": "2026-06-28", "weight": 610, "pieces": 6}
+{"tracking_number": "SHP-00117", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782673200000, "location": {"city": "Chicago", "region": "IL"}, "sla_date": "2026-07-02"}
+{"shipmentId": "SHP-00082", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-26T23:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-27"}
+{"tracking_number": "SHP-00049", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782702000000, "location": {"city": "Charlotte"}}
+{"pro_number": "SHP-00015", "scac": "ESTE", "status": "MISSED DELIVERY APPOINTMENT", "datetime": "06/28/2026 01:00", "terminal": "Tampa, FL", "weight": 658, "pieces": 1}
+{"shipmentId": "SHP-00037", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T10:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-25"}
+{"pro_number": "SHP-00061", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/28/2026 03:00", "terminal": "Chicago, IL", "appt": "2026-06-26", "weight": 1690, "pieces": 4}
+{"shipmentId": "SHP-00103", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T18:00:00Z", "city": "Atlanta", "state": "GA", "promisedDeliveryDate": "2026-07-01"}
+{"shipmentId": "SHP-00122", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-29T04:00:00Z", "city": "Reno", "state": "NV", "promisedDeliveryDate": "2026-07-02"}
+{"pro_number": "SHP-00044", "scac": "ESTE", "status": "DAMAGED IN TRANSIT", "datetime": "06/28/2026 14:00", "terminal": "Reno, NV", "appt": "2026-06-24", "weight": 162, "pieces": 2}
+{"shipmentId": "SHP-00119", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-25T21:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00031", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-29T03:00:00Z"}
+{"shipmentId": "SHP-00031", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-29T07:00:00Z", "city": "Chicago", "state": "IL"}
+{"shipmentId": "SHP-00042", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-29T06:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-25"}
+{"tracking_number": "SHP-00098", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782651600000, "location": {"city": "Columbus"}, "sla_date": "2026-06-29"}
+{"tracking_number": "SHP-00118", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782687600000, "location": {"city": "Charlotte"}}
+{"shipmentId": "SHP-00122", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T01:00:00Z", "city": "Atlanta", "state": "GA"}
+{"pro_number": "SHP-00002", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/26/2026 17:00", "terminal": "Charlotte, NC", "appt": "2026-06-27", "weight": 1358, "pieces": 4}
+{"shipmentId": "SHP-00121", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-26T08:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00025", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T11:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-07-03"}
+{"pro_number": "SHP-00101", "scac": "ESTE", "status": "HELD - CONSIGNEE CLOSED", "datetime": "06/28/2026 15:00", "terminal": "Phoenix, AZ", "appt": "2026-06-28", "weight": 886, "pieces": 11}
+{"pro_number": "SHP-00002", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/26/2026 09:00", "terminal": "Phoenix, AZ", "appt": "2026-06-27", "weight": 1358, "pieces": 4}
+{"pro_number": "SHP-00045", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/26/2026 10:00", "terminal": "Newark, NJ", "weight": 881, "pieces": 8}
+{"pro_number": "SHP-00054", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/29/2026 03:00", "terminal": "Chicago, IL", "appt": "2026-06-29", "weight": 988, "pieces": 7}
+{"pro_number": "SHP-00061", "scac": "ESTE", "status": "HELD - CONSIGNEE CLOSED", "datetime": "06/28/2026 15:00", "terminal": "Portland, OR", "appt": "2026-06-26", "weight": 1690, "pieces": 4}
+{"tracking_number": "SHP-00021", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782388800000, "location": {"city": "Chicago", "region": "IL"}, "sla_date": "2026-06-29"}
+{"pro_number": "SHP-00065", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/28/2026 19:00", "terminal": "Phoenix, AZ", "appt": "2026-06-29", "weight": 724, "pieces": 7}
+{"shipmentId": "SHP-00083", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-26T02:00:00Z", "city": "Columbus", "state": "OH"}
+{"tracking_number": "SHP-00092", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782709200000, "location": {"city": "Chicago", "region": "IL"}, "sla_date": "2026-06-30"}
+{"shipmentId": "SHP-00059", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T16:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00060", "scac": "UPSN", "statusCode": "PU", "statusText": "Picked Up", "ts": "2026-06-28T13:00:00Z", "city": "Atlanta", "state": "GA", "promisedDeliveryDate": "2026-07-01"}
+{"shipmentId": "SHP-00010", "scac": "UPSN", "statusCode": "HL", "statusText": "Held at Facility", "ts": "2026-06-29T01:00:00Z", "city": "Phoenix", "state": "AZ"}
+{"pro_number": "SHP-00096", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/22/2026 12:00", "terminal": "Tampa, FL", "appt": "2026-06-30", "weight": 1121, "pieces": 8}
+{"pro_number": "SHP-00023", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/27/2026 19:00", "terminal": "Charlotte, NC", "weight": 505, "pieces": 10}
+{"pro_number": "SHP-00001", "scac": "ESTE", "status": "MISSED DELIVERY APPOINTMENT", "datetime": "06/28/2026 11:00", "terminal": "Atlanta, GA", "appt": "2026-06-27", "weight": 1096, "pieces": 3}
+{"shipmentId": "SHP-00083", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-26T02:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00052", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T03:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-25"}
+{"pro_number": "SHP-00110", "scac": "ESTE", "status": "PICKED UP", "datetime": "06/28/2026 16:00", "terminal": "Newark, NJ", "appt": "2026-06-28", "weight": 1389, "pieces": 2}
+{"shipmentId": "SHP-00060", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T01:00:00Z", "city": "Newark", "state": "NJ"}
+{"pro_number": "SHP-00088", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 14:00", "terminal": "Newark, NJ", "appt": "2026-06-28", "weight": 1463, "pieces": 3}
+{"shipmentId": "SHP-00042", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-29T00:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-06-25"}
+{"tracking_number": "SHP-00021", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782388800000, "location": {"city": "Chicago"}, "sla_date": "2026-06-29"}
+{"tracking_number": "SHP-00048", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782702000000, "location": {"city": "Atlanta", "region": "GA"}}
+{"tracking_number": "SHP-00032", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782727200000, "location": {"city": "Portland", "region": "OR"}}
+{"pro_number": "SHP-00108", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/29/2026 04:00", "terminal": "Phoenix, AZ", "appt": "2026-07-02", "weight": 74, "pieces": 11}
+{"pro_number": "SHP-00005", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 01:00", "terminal": "Denver, CO", "appt": "2026-06-28", "weight": 232, "pieces": 8}
+{"shipmentId": "SHP-00087", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T22:00:00Z", "city": "Chicago", "state": "IL", "promisedDeliveryDate": "2026-07-01"}
+{"pro_number": "SHP-00024", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 07:00", "terminal": "Chicago, IL", "appt": "2026-07-03", "weight": 1255, "pieces": 2}
+{"shipmentId": "SHP-00121", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-26T10:00:00Z", "city": "Portland", "state": "OR"}
+{"pro_number": "SHP-00105", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/28/2026 04:00", "terminal": "Reno, NV", "weight": 610, "pieces": 6}
+{"shipmentId": "SHP-00119", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-25T13:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-06-26"}
+{"pro_number": "SHP-00093", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/29/2026 06:00", "terminal": "Atlanta, GA", "appt": "2026-06-30", "weight": 1526, "pieces": 12}
+{"tracking_number": "SHP-00112", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782615600000, "location": {"city": "Phoenix"}, "sla_date": "2026-06-28"}
+{"shipmentId": "SHP-00116", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-26T23:00:00Z", "city": "Reno", "state": "NV", "promisedDeliveryDate": "2026-06-27"}
+{"tracking_number": "SHP-00102", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782630000000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-28"}
+{"shipmentId": "SHP-00116", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-26T17:00:00Z", "city": "Charlotte", "state": "NC", "promisedDeliveryDate": "2026-06-27"}
+{"shipmentId": "SHP-00013", "scac": "UPSN", "statusCode": "PU", "statusText": "Picked Up", "ts": "2026-06-27T09:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-06-26"}
+{"tracking_number": "SHP-00091", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782669600000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-30"}
+{"tracking_number": "SHP-00118", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782658800000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-07-01"}
+{"pro_number": "SHP-00078", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 21:00", "terminal": "Denver, CO", "weight": 759, "pieces": 1}
+{"tracking_number": "SHP-00106", "carrier": "FXFE", "event": {"code": 900, "description": "Delivery exception"}, "event_time": 1782720000000, "location": {"city": "Denver"}}
+{"tracking_number": "SHP-00111", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782716400000, "location": {"city": "Denver", "region": "CO"}, "sla_date": "2026-07-02"}
+{"shipmentId": "SHP-00079", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-28T00:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-28"}
+{"shipmentId": "SHP-00104", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T21:00:00Z", "city": "Atlanta", "state": "GA", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00009", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782727200000, "location": {"city": "Tampa", "region": "FL"}}
+{"pro_number": "SHP-00026", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/27/2026 09:00", "terminal": "Chicago, IL", "appt": "2026-06-27", "weight": 1166, "pieces": 9}
+{"pro_number": "SHP-00007", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/27/2026 16:00", "terminal": "Dallas, TX", "weight": 1088, "pieces": 4}
+{"shipmentId": "SHP-00100", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-30T09:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-06-30"}
+{"shipmentId": "SHP-00025", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T19:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-07-03"}
+{"shipmentId": "SHP-00107", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T04:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-06-30"}
+{"shipmentId": "SHP-00004", "scac": "UPSN", "statusCode": "DE", "statusText": "Delivery Exception", "ts": "2026-06-28T08:00:00Z", "city": "Phoenix", "state": "AZ"}
+{"shipmentId": "SHP-00089", "scac": "UPSN", "statusCode": "DE", "statusText": "Delivery Exception", "ts": "2026-06-28T23:00:00Z", "city": "Charlotte", "state": "NC"}
+{"tracking_number": "SHP-00091", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782651600000, "location": {"city": "Portland", "region": "OR"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00045", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/26/2026 01:00", "terminal": "Dallas, TX", "appt": "2026-06-26", "weight": 881, "pieces": 8}
+{"shipmentId": "SHP-00124", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-30T06:00:00Z", "city": "Dallas", "state": "TX"}
+{"shipmentId": "SHP-00058", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T14:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-25"}
+{"shipmentId": "SHP-00047", "scac": "UPSN", "statusCode": "HL", "statusText": "Held at Facility", "ts": "2026-06-29T08:00:00Z", "promisedDeliveryDate": "2026-06-27"}
+{"shipmentId": "SHP-00070", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T19:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-07-02"}
+{"pro_number": "SHP-00064", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/27/2026 02:00", "terminal": "Newark, NJ", "weight": 1221, "pieces": 3}
+{"pro_number": "SHP-00110", "scac": "ESTE", "status": "DELAYED - WEATHER", "datetime": "06/29/2026 04:00", "terminal": "Atlanta, GA", "appt": "2026-06-28", "weight": 1389, "pieces": 2}
+{"tracking_number": "SHP-00035", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782777600000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00064", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/26/2026 12:00", "terminal": "Columbus, OH", "weight": 1221, "pieces": 3}
+{"shipmentId": "SHP-00016", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-25T14:00:00Z", "city": "Denver", "state": "CO"}
+{"pro_number": "SHP-00044", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/28/2026 16:00", "terminal": "Memphis, TN", "appt": "2026-06-24", "weight": 162, "pieces": 2}
+{"tracking_number": "SHP-00049", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782716400000, "location": {"city": "Phoenix", "region": "AZ"}}
+{"shipmentId": "SHP-00013", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-27T17:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-06-26"}
+{"tracking_number": "SHP-00006", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782684000000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-29"}
+{"tracking_number": "SHP-00098", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782637200000, "location": {"city": "Portland", "region": "OR"}, "sla_date": "2026-06-29"}
+{"shipmentId": "SHP-00100", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-30T01:00:00Z", "city": "Reno", "state": "NV", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00038", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782475200000, "location": {"city": "Memphis", "region": "TN"}}
+{"shipmentId": "SHP-00059", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-28T06:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00107", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-28T17:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-30"}
+{"pro_number": "SHP-00030", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 22:00", "terminal": "Memphis, TN", "appt": "2026-07-01", "weight": 1722, "pieces": 1}
+{"shipmentId": "SHP-00062", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-26T12:00:00Z", "city": "Atlanta", "state": "GA", "promisedDeliveryDate": "2026-06-29"}
+{"shipmentId": "SHP-00053", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T05:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-06-30"}
+{"shipmentId": "SHP-00052", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T09:00:00Z", "city": "Chicago", "state": "IL"}
+{"tracking_number": "SHP-00098", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782684000000, "location": {"city": "Memphis", "region": "TN"}}
+{"shipmentId": "SHP-00063", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T03:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-24"}
+{"tracking_number": "SHP-00085", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782705600000, "location": {"city": "Denver", "region": "CO"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00086", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/25/2026 19:00", "terminal": "Denver, CO", "appt": "2026-06-26", "weight": 1774, "pieces": 3}
+{"pro_number": "SHP-00065", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/28/2026 23:00", "terminal": "Columbus, OH", "appt": "2026-06-29", "weight": 724, "pieces": 7}
+{"shipmentId": "SHP-00058", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-28T11:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-06-25"}
+{"pro_number": "SHP-00088", "scac": "ESTE", "status": "DELAYED - WEATHER", "datetime": "06/28/2026 16:00", "terminal": "Denver, CO", "appt": "2026-06-28", "weight": 1463, "pieces": 3}
+{"shipmentId": "SHP-00069", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-30T02:00:00Z", "city": "Charlotte", "state": "NC", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00117", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782687600000, "location": {"city": "Columbus", "region": "OH"}, "sla_date": "2026-07-02"}
+{"shipmentId": "SHP-00114", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-24T12:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-07-01"}
+{"shipmentId": "SHP-00095", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T04:00:00Z"}
+{"tracking_number": "SHP-00035", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782777600000, "location": {"city": "Charlotte", "region": "NC"}, "sla_date": "2026-06-30"}
+{"tracking_number": "SHP-00098", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782684000000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-29"}
+{"tracking_number": "SHP-00072", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782590400000, "location": {"city": "Chicago", "region": "IL"}, "sla_date": "2026-06-27"}
+{"shipmentId": "SHP-00124", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-30T08:00:00Z", "city": "Dallas", "state": "TX"}
+{"shipmentId": "SHP-00040", "scac": "UPSN", "statusCode": "DE", "statusText": "Delivery Exception", "ts": "2026-06-28T11:00:00Z", "promisedDeliveryDate": "2026-06-28"}
+{"shipmentId": "SHP-00051", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-27T21:00:00Z", "promisedDeliveryDate": "2026-06-28"}
+{"shipmentId": "SHP-00010", "scac": "UPSN", "statusCode": "HL", "statusText": "Held at Facility", "ts": "2026-06-29T01:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-26"}
+{"tracking_number": "SHP-00021", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782363600000, "location": {"city": "Dallas"}, "sla_date": "2026-06-29"}
+{"pro_number": "SHP-00068", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/28/2026 19:00", "terminal": "Memphis, TN", "appt": "2026-06-27", "weight": 370, "pieces": 3}
+{"shipmentId": "SHP-00057", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T21:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-07-01"}
+{"tracking_number": "SHP-00035", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782777600000, "location": {"city": "Charlotte", "region": "NC"}}
+{"pro_number": "SHP-00113", "scac": "ESTE", "status": "DAMAGED IN TRANSIT", "datetime": "06/28/2026 14:00", "terminal": "Columbus, OH", "weight": 1594, "pieces": 10}
+{"tracking_number": "SHP-00102", "carrier": "FXFE", "event": {"code": 100, "description": "Picked up"}, "event_time": 1782586800000, "location": {"city": "Memphis", "region": "TN"}}
+{"pro_number": "SHP-00003", "scac": "ESTE", "status": "DELAYED - WEATHER", "datetime": "06/29/2026 04:00", "terminal": "Charlotte, NC", "weight": 1787, "pieces": 1}
+{"tracking_number": "SHP-00034", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782763200000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-30"}
+{"tracking_number": "SHP-00018", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782691200000, "location": {"city": "Atlanta", "region": "GA"}}
+{"shipmentId": "SHP-00080", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-25T12:00:00Z", "city": "Denver", "state": "CO"}
+{"tracking_number": "SHP-00092", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782730800000, "location": {"city": "Memphis", "region": "TN"}}
+{"pro_number": "SHP-00093", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/29/2026 03:00", "terminal": "Charlotte, NC", "appt": "2026-06-30", "weight": 1526, "pieces": 12}
+{"shipmentId": "SHP-00084", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-29T21:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00076", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782468000000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00032", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782716400000, "location": {"city": "Portland"}, "sla_date": "2026-07-02"}
+{"tracking_number": "SHP-00115", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782406800000, "location": {"city": "Newark", "region": "NJ"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00008", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782597600000, "location": {"city": "Tampa"}, "sla_date": "2026-06-28"}
+{"shipmentId": "SHP-00119", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-25T21:00:00Z", "city": "Reno", "state": "NV"}
+{"shipmentId": "SHP-00079", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-27T14:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-06-28"}
+{"pro_number": "SHP-00036", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/29/2026 03:00", "terminal": "Denver, CO", "appt": "2026-07-02", "weight": 964, "pieces": 7}
+{"tracking_number": "SHP-00074", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782799200000, "location": {"city": "Portland", "region": "OR"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00086", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/25/2026 17:00", "terminal": "Newark, NJ", "appt": "2026-06-26", "weight": 1774, "pieces": 3}
+{"shipmentId": "SHP-00037", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T13:00:00Z", "city": "Atlanta", "state": "GA"}
+{"shipmentId": "SHP-00070", "scac": "UPSN", "statusCode": "PU", "statusText": "Picked Up", "ts": "2026-06-28T13:00:00Z", "city": "Atlanta", "state": "GA", "promisedDeliveryDate": "2026-07-02"}
+{"pro_number": "SHP-00099", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/28/2026 12:00", "terminal": "Atlanta, GA", "weight": 599, "pieces": 7}
+{"shipmentId": "SHP-00050", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-28T03:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-06-28"}
+{"tracking_number": "SHP-00049", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782687600000, "location": {"city": "Dallas", "region": "TX"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00026", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/27/2026 01:00", "terminal": "Chicago, IL", "appt": "2026-06-27", "weight": 1166, "pieces": 9}
+{"shipmentId": "SHP-00022", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-26T22:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-27"}
+{"shipmentId": "SHP-00022", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-27T00:00:00Z", "city": "Reno", "state": "NV", "promisedDeliveryDate": "2026-06-27"}
+{"shipmentId": "SHP-00047", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T04:00:00Z", "city": "Charlotte", "state": "NC", "promisedDeliveryDate": "2026-06-27"}
+{"pro_number": "SHP-00003", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/28/2026 15:00", "terminal": "Dallas, TX", "appt": "2026-06-24", "weight": 1787, "pieces": 1}
+{"shipmentId": "SHP-00075", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T20:00:00Z", "city": "Atlanta", "state": "GA"}
+{"tracking_number": "SHP-00034", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782766800000, "location": {"city": "Newark", "region": "NJ"}, "sla_date": "2026-06-30"}
+{"shipmentId": "SHP-00082", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-27T10:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-27"}
+{"tracking_number": "SHP-00049", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782716400000, "location": {"city": "Phoenix", "region": "AZ"}, "sla_date": "2026-06-30"}
+{"shipmentId": "SHP-00114", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-24T06:00:00Z", "city": "Charlotte", "state": "NC"}
+{"pro_number": "SHP-00108", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/28/2026 20:00", "terminal": "Tampa, FL", "appt": "2026-07-02", "weight": 74, "pieces": 11}
+{"pro_number": "SHP-00024", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 19:00", "terminal": "Memphis, TN", "weight": 1255, "pieces": 2}
+{"tracking_number": "SHP-00027", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782583200000, "location": {"city": "Dallas", "region": "TX"}, "sla_date": "2026-06-28"}
+{"shipmentId": "SHP-00041", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T10:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-07-02"}
+{"pro_number": "SHP-00007", "scac": "ESTE", "status": "DELIVERED", "datetime": "06/28/2026 00:00", "terminal": "Chicago, IL", "appt": "2026-06-28", "weight": 1088, "pieces": 4}
+{"tracking_number": "SHP-00081", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782676800000, "location": {"city": "Memphis", "region": "TN"}}
+{"tracking_number": "SHP-00112", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782612000000, "location": {"city": "Atlanta", "region": "GA"}}
+{"shipmentId": "SHP-00095", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T04:00:00Z", "city": "Charlotte", "state": "NC"}
+{"pro_number": "SHP-00054", "scac": "ESTE", "status": "OUT FOR DELIVERY", "datetime": "06/28/2026 23:00", "terminal": "Columbus, OH", "appt": "2026-06-29", "weight": 988, "pieces": 7}
+{"pro_number": "SHP-00068", "scac": "ESTE", "status": "MISSED DELIVERY APPOINTMENT", "datetime": "06/28/2026 22:00", "terminal": "Dallas, TX", "appt": "2026-06-27", "weight": 370, "pieces": 3}
+{"shipmentId": "SHP-00107", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-29T00:00:00Z", "city": "Denver", "state": "CO", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00048", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782666000000, "location": {"city": "Newark", "region": "NJ"}, "sla_date": "2026-06-30"}
+{"tracking_number": "SHP-00102", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782619200000, "location": {"city": "Atlanta", "region": "GA"}, "sla_date": "2026-06-28"}
+{"pro_number": "SHP-00024", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/28/2026 13:00", "terminal": "Tampa, FL", "weight": 1255, "pieces": 2}
+{"shipmentId": "SHP-00051", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-27T21:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-28"}
+{"shipmentId": "SHP-00033", "scac": "UPSN", "statusCode": "DE", "statusText": "Delivery Exception", "ts": "2026-06-28T00:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-25"}
+{"shipmentId": "SHP-00043", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-29T09:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-29"}
+{"shipmentId": "SHP-00059", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T18:00:00Z", "city": "Memphis", "state": "TN"}
+{"shipmentId": "SHP-00089", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T17:00:00Z", "city": "Memphis", "state": "TN"}
+{"pro_number": "SHP-00109", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 20:00", "terminal": "Newark, NJ", "appt": "2026-07-02", "weight": 860, "pieces": 5}
+{"pro_number": "SHP-00113", "scac": "ESTE", "status": "DAMAGED IN TRANSIT", "datetime": "06/28/2026 14:00", "terminal": "Columbus, OH", "appt": "2026-06-24", "weight": 1594, "pieces": 10}
+{"tracking_number": "SHP-00046", "carrier": "FXFE", "event": {"code": 900, "description": "Delivery exception"}, "event_time": 1782637200000, "location": {"city": "Columbus", "region": "OH"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00029", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782129600000, "location": {"city": "Reno", "region": "NV"}}
+{"shipmentId": "SHP-00016", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-25T20:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-06-26"}
+{"tracking_number": "SHP-00077", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782550800000, "location": {"city": "Reno", "region": "NV"}, "sla_date": "2026-06-27"}
+{"shipmentId": "SHP-00067", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T23:00:00Z", "city": "Memphis", "state": "TN"}
+{"shipmentId": "SHP-00011", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T10:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-07-01"}
+{"tracking_number": "SHP-00018", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782723600000, "location": {"city": "Dallas"}, "sla_date": "2026-07-02"}
+{"tracking_number": "SHP-00027", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782579600000, "location": {"city": "Reno", "region": "NV"}, "sla_date": "2026-06-28"}
+{"shipmentId": "SHP-00069", "scac": "UPSN", "statusCode": "PU", "statusText": "Picked Up", "ts": "2026-06-29T21:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00076", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782457200000, "location": {"city": "Charlotte", "region": "NC"}}
+{"tracking_number": "SHP-00056", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782406800000, "location": {"city": "Memphis"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00017", "carrier": "FXFE", "event": {"code": 900, "description": "Delivery exception"}, "event_time": 1782640800000, "location": {"city": "Columbus", "region": "OH"}, "sla_date": "2026-06-24"}
+{"pro_number": "SHP-00105", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/27/2026 20:00", "terminal": "Memphis, TN", "weight": 610, "pieces": 6}
+{"tracking_number": "SHP-00092", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782752400000, "location": {"city": "Denver", "region": "CO"}, "sla_date": "2026-06-30"}
+{"shipmentId": "SHP-00100", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-30T09:00:00Z", "city": "Dallas", "state": "TX", "promisedDeliveryDate": "2026-06-30"}
+{"shipmentId": "SHP-00004", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-28T05:00:00Z", "city": "Chicago", "state": "IL", "promisedDeliveryDate": "2026-06-24"}
+{"tracking_number": "SHP-00111", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782723600000, "location": {"city": "Tampa", "region": "FL"}, "sla_date": "2026-07-02"}
+{"shipmentId": "SHP-00050", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-28T00:00:00Z", "city": "Charlotte", "state": "NC", "promisedDeliveryDate": "2026-06-28"}
+{"shipmentId": "SHP-00010", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-28T16:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-06-26"}
+{"tracking_number": "SHP-00020", "carrier": "FXFE", "event": {"code": 900, "description": "Delivery exception"}, "event_time": 1782720000000, "location": {"city": "Columbus", "region": "OH"}}
+{"shipmentId": "SHP-00057", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T22:00:00Z", "city": "Columbus", "state": "OH", "promisedDeliveryDate": "2026-07-01"}
+{"shipmentId": "SHP-00062", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-26T06:00:00Z", "city": "Chicago", "state": "IL", "promisedDeliveryDate": "2026-06-29"}
+{"pro_number": "SHP-00099", "scac": "ESTE", "status": "DELAYED - MECHANICAL", "datetime": "06/28/2026 20:00", "terminal": "Columbus, OH", "appt": "2026-06-25", "weight": 599, "pieces": 7}
+{"shipmentId": "SHP-00084", "scac": "UPSN", "statusCode": "DP", "statusText": "Departed Facility", "ts": "2026-06-29T18:00:00Z"}
+{"shipmentId": "SHP-00070", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-29T01:00:00Z", "city": "Newark", "state": "NJ", "promisedDeliveryDate": "2026-07-02"}
+{"shipmentId": "SHP-00082", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-27T07:00:00Z", "city": "Memphis", "state": "TN"}
+{"shipmentId": "SHP-00079", "scac": "UPSN", "statusCode": "DE", "statusText": "Delivery Exception", "ts": "2026-06-27T23:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-06-28"}
+{"tracking_number": "SHP-00090", "carrier": "FXFE", "event": {"code": 850, "description": "Held"}, "event_time": 1782594000000, "location": {"city": "Reno", "region": "NV"}, "sla_date": "2026-06-28"}
+{"tracking_number": "SHP-00039", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782691200000, "location": {"city": "Phoenix", "region": "AZ"}}
+{"pro_number": "SHP-00101", "scac": "ESTE", "status": "HELD - CONSIGNEE CLOSED", "datetime": "06/28/2026 15:00", "terminal": "Phoenix, AZ", "appt": "2026-06-28", "weight": 886, "pieces": 11}
+{"tracking_number": "SHP-00020", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782712800000, "location": {"city": "Charlotte", "region": "NC"}}
+{"tracking_number": "SHP-00115", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782396000000, "location": {"city": "Atlanta", "region": "GA"}, "sla_date": "2026-06-26"}
+{"shipmentId": "SHP-00100", "scac": "UPSN", "statusCode": "AR", "statusText": "Arrived at Facility", "ts": "2026-06-30T11:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-06-30"}
+{"tracking_number": "SHP-00008", "carrier": "FXFE", "event": {"code": 400, "description": "Out for delivery"}, "event_time": 1782612000000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-28"}
+{"pro_number": "SHP-00108", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/29/2026 00:00", "terminal": "Columbus, OH", "appt": "2026-07-02", "weight": 74, "pieces": 11}
+{"pro_number": "SHP-00028", "scac": "ESTE", "status": "IN TRANSIT", "datetime": "06/28/2026 23:00", "terminal": "Charlotte, NC", "weight": 137, "pieces": 7}
+{"shipmentId": "SHP-00125", "scac": "UPSN", "statusCode": "OD", "statusText": "Out for Delivery", "ts": "2026-06-28T19:00:00Z", "city": "Tampa", "state": "FL"}
+{"tracking_number": "SHP-00006", "carrier": "FXFE", "event": {"code": 500, "description": "Delivered"}, "event_time": 1782705600000, "location": {"city": "Charlotte", "region": "NC"}, "sla_date": "2026-06-29"}
+{"tracking_number": "SHP-00072", "carrier": "FXFE", "event": {"code": 950, "description": "Weather delay"}, "event_time": 1782608400000, "location": {"city": "Tampa"}, "sla_date": "2026-06-27"}
+{"tracking_number": "SHP-00014", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782673200000, "location": {"city": "Portland"}}
+{"shipmentId": "SHP-00050", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-27T15:00:00Z", "city": "Portland", "state": "OR", "promisedDeliveryDate": "2026-06-28"}
+{"tracking_number": "SHP-00038", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782475200000, "location": {"city": "Memphis", "region": "TN"}}
+{"shipmentId": "SHP-00013", "scac": "UPSN", "statusCode": "HL", "statusText": "Held at Facility", "ts": "2026-06-27T21:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00066", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-25T22:00:00Z", "city": "Denver", "state": "CO", "promisedDeliveryDate": "2026-06-26"}
+{"shipmentId": "SHP-00071", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-28T22:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-06-29"}
+{"pro_number": "SHP-00045", "scac": "ESTE", "status": "DEPARTED TERMINAL", "datetime": "06/26/2026 09:00", "terminal": "Memphis, TN", "appt": "2026-06-26", "weight": 881, "pieces": 8}
+{"shipmentId": "SHP-00069", "scac": "UPSN", "statusCode": "DL", "statusText": "Delivered", "ts": "2026-06-30T09:00:00Z", "city": "Phoenix", "state": "AZ", "promisedDeliveryDate": "2026-06-30"}
+{"shipmentId": "SHP-00063", "scac": "UPSN", "statusCode": "EX", "statusText": "Exception", "ts": "2026-06-28T02:00:00Z", "city": "Denver", "state": "CO", "promisedDeliveryDate": "2026-06-24"}
+{"shipmentId": "SHP-00060", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T19:00:00Z", "city": "Tampa", "state": "FL", "promisedDeliveryDate": "2026-07-01"}
+{"shipmentId": "SHP-00041", "scac": "UPSN", "statusCode": "IT", "statusText": "In Transit", "ts": "2026-06-28T18:00:00Z", "city": "Memphis", "state": "TN", "promisedDeliveryDate": "2026-07-02"}
+{"tracking_number": "SHP-00035", "carrier": "FXFE", "event": {"code": 320, "description": "Departed facility"}, "event_time": 1782759600000, "location": {"city": "Reno", "region": "NV"}, "sla_date": "2026-06-30"}
+{"pro_number": "SHP-00064", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/26/2026 21:00", "terminal": "Portland, OR", "appt": "2026-06-27", "weight": 1221, "pieces": 3}
+{"tracking_number": "SHP-00006", "carrier": "FXFE", "event": {"code": 100, "description": "Picked up"}, "event_time": 1782662400000, "location": {"city": "Newark", "region": "NJ"}, "sla_date": "2026-06-29"}
+{"pro_number": "SHP-00030", "scac": "ESTE", "status": "ARRIVED AT TERMINAL", "datetime": "06/28/2026 22:00", "terminal": "Phoenix, AZ", "appt": "2026-07-01", "weight": 1722, "pieces": 1}
+{"tracking_number": "SHP-00074", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782788400000, "location": {"city": "Memphis", "region": "TN"}, "sla_date": "2026-06-30"}
+{"tracking_number": "SHP-00014", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782687600000, "location": {"city": "Chicago", "region": "IL"}}
+{"tracking_number": "SHP-00076", "carrier": "FXFE", "event": {"code": 300, "description": "Arrived at facility"}, "event_time": 1782435600000, "location": {"city": "Denver", "region": "CO"}, "sla_date": "2026-06-26"}
+{"tracking_number": "SHP-00018", "carrier": "FXFE", "event": {"code": 200, "description": "In transit"}, "event_time": 1782676800000, "location": {"city": "Dallas", "region": "TX"}, "sla_date": "2026-07-02"}

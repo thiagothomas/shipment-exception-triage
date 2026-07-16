@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shipment-exception-triage"
+version = "0.1.0"
+description = "Auditable shipment exception triage with structured AI decisions and EDI 214 drafts"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "google-genai>=2.10,<3",
+  "httpx>=0.28,<1",
+  "pydantic>=2.12,<3",
+  "PyYAML>=6.0.2,<7",
+]
+
+[project.optional-dependencies]
+api = [
+  "fastapi>=0.139,<1",
+  "uvicorn>=0.35,<1",
+]
+
+[project.scripts]
+triage = "shipment_triage.cli:main"
+
+[dependency-groups]
+dev = [
+  "mypy>=1.16,<2",
+  "pytest>=9,<10",
+  "pytest-cov>=7,<8",
+  "ruff>=0.12,<1",
+  "types-PyYAML>=6.0.12,<7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shipment_triage"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "ASYNC",
+  "B",
+  "C4",
+  "DTZ",
+  "E",
+  "F",
+  "I",
+  "ISC",
+  "LOG",
+  "PIE",
+  "PT",
+  "PTH",
+  "RET",
+  "RUF",
+  "S",
+  "SIM",
+  "TC",
+  "UP",
+]
+ignore = ["ISC001"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-config --strict-markers --cov=shipment_triage --cov-report=term-missing --cov-fail-under=85"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "live: calls external services and is excluded from the default suite",
+]

@@ -1,0 +1,29 @@
+# private working notes — never commit
+NOTES.private.md
+SPEC.md
+*.pdf
+.claude/
+.codex/
+.DS_Store
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# run artifacts
+runs/
+state/
+eval/results/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
