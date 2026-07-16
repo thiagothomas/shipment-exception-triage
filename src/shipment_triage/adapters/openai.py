@@ -58,6 +58,16 @@ def _is_quota_error(error: Exception) -> bool:
     return status_code == 429 or code == 429
 
 
+def _attempt_metadata(response: _ParsedResponse) -> dict[str, Any]:
+    usage = getattr(response, "usage", None)
+    return {
+        "interaction_id": getattr(response, "id", None),
+        "input_tokens": getattr(usage, "input_tokens", None),
+        "output_tokens": getattr(usage, "output_tokens", None),
+        "total_tokens": getattr(usage, "total_tokens", None),
+    }
+
+
 def _contains_refusal(response: _ParsedResponse) -> bool:
     for output in response.output:
         if getattr(output, "type", None) != "message":
@@ -252,6 +262,7 @@ class OpenAIClassifier:
                             if refused
                             else "OpenAI returned no parsed structured output."
                         ),
+                        **_attempt_metadata(response),
                     )
                 )
                 return self._fallback_results(packs, tuple(attempts), provider_outputs)
@@ -266,6 +277,7 @@ class OpenAIClassifier:
                         outcome=ClassificationAttemptOutcome.INVALID_OUTPUT,
                         duration_ms=duration_ms,
                         detail="OpenAI output failed shipment or evidence validation.",
+                        **_attempt_metadata(response),
                     )
                 )
                 if attempt_number == 1:
@@ -279,6 +291,7 @@ class OpenAIClassifier:
                     outcome=ClassificationAttemptOutcome.SUCCESS,
                     duration_ms=duration_ms,
                     detail="OpenAI output passed local validation.",
+                    **_attempt_metadata(response),
                 )
             )
             return tuple(

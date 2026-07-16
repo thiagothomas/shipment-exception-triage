@@ -65,7 +65,12 @@ class _FakeResponses:
         if isinstance(response, _FakeResponse):
             return response
         parsed = kwargs["text_format"].model_validate_json(json.dumps(response))
-        return _FakeResponse(output_parsed=parsed, output=())
+        return _FakeResponse(
+            output_parsed=parsed,
+            output=(),
+            id=f"resp_{len(self.calls)}",
+            usage=SimpleNamespace(input_tokens=120, output_tokens=40, total_tokens=160),
+        )
 
 
 class _FakeClient:
@@ -106,6 +111,9 @@ def test_openai_uses_stateless_structured_response_and_validates_references() ->
     assert responses.calls[0]["text_format"].__name__ == "_BatchOutput"
     assert "untrusted data" in responses.calls[0]["instructions"]
     assert "tools" not in responses.calls[0]
+    assert result.attempts[0].interaction_id == "resp_1"
+    assert result.attempts[0].input_tokens == 120
+    assert result.attempts[0].output_tokens == 40
 
 
 def _valid_response(pack: EvidencePack) -> dict[str, Any]:

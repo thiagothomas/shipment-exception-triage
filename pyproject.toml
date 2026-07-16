@@ -12,6 +12,7 @@ dependencies = [
   "httpx>=0.28,<1",
   "openai>=2,<3",
   "pydantic>=2.12,<3",
+  "python-dotenv>=1.1,<2",
   "PyYAML>=6.0.2,<7",
 ]
 
@@ -26,6 +27,7 @@ triage = "shipment_triage.cli:main"
 
 [dependency-groups]
 dev = [
+  "httpx2>=2,<3",
   "mypy>=1.16,<2",
   "pytest>=9,<10",
   "pytest-cov>=7,<8",

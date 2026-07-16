@@ -132,6 +132,10 @@ class ClassificationAttempt(DomainModel):
     outcome: ClassificationAttemptOutcome
     duration_ms: float = Field(ge=0)
     detail: str = Field(min_length=1, max_length=240)
+    interaction_id: str | None = Field(default=None, min_length=1, max_length=160)
+    input_tokens: int | None = Field(default=None, ge=0)
+    output_tokens: int | None = Field(default=None, ge=0)
+    total_tokens: int | None = Field(default=None, ge=0)
 
 
 class GuardrailOverride(DomainModel):
